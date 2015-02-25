@@ -29,7 +29,7 @@ Operator     | Phrase Returns                                    | Example
  ===         |Whether LHS and RHS are equal                      |`"12" === 12;//Phrase returns false` <br> `"0" === false;//Phrase returns false` <br> `1 === true;//Phrase returns false` <br> `"false" === false;//Phrase returns false` <br> `"dog" === "doge";//Phrase returns false` <br> `"dog" === "dog";//Phrase returns true`
  <           |Whether LHS is less than RHS                       |`2<5;//Phrase returns true` <br> `5<2;//Phrase returns false` <br> `5<5;//Phrase returns false`
  <=          |Whether LHS is less than  or equal to RHS          |`2<=5;//Phrase returns true` <br> `5<=2;//Phrase returns false` <br> `5<=5;//Phrase returns true`
- >           |Whether LHS is greater than RHS                    |`2>5;//Phrase returns false` <br> `5>2;//Phrase returns true` <br> `5<5;//Phrase returns false`
+ >           |Whether LHS is greater than RHS                    |`2>5;//Phrase returns false` <br> `5>2;//Phrase returns true` <br> `5>5;//Phrase returns false`
  >=          |Whether LHS is greater than or equal to RHS        |`2>=5;//Phrase returns false` <br> `5>=2;//Phrase returns true` <br> `5>=5;//Phrase returns false`
  !=          |Whether LHS is not equal RHS                       |`"0" != 0;//Phrase returns false` <br> `"0" != false;//Phrase returns false` <br> `1 != true;//Phrase returns false` <br> `"false" != false;//Phrase returns true` <br> `"dog" != "doge";//Phrase returns true` <br> `"dog" != "dog";//Phrase returns false`
  &&          |Whether LHS and RHS are true                       |`true && true;//Phrase returns true` <br> `true && false;//Phrase returns false` <br> `false && true;//Phrase returns false` <br> `false && false;//Phrase returns true`
