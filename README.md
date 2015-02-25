@@ -29,7 +29,7 @@ Operator     | Phrase Returns                                    | Example
   ++ (on right) |LHS to 1 greater than previous value | New value      |`var a = 3` <br> `a++;//Returns 3 and a = 4`
   -- (on right) |LHS to 1 less than previous value    | New value      |`var a = 3` <br> `a--;//Returns 3 and a = 2`
   ++ (on left)  |RHS to 1 greater than previous value | Old value      |`var a = 3` <br> `++a;//Returns 4 and a = 4`
-  -- (on left)  |RHS to 1 less than previous value    | Old value      |`var a = 3 <br> `--a;//Returns 2 and a = 2`
+  -- (on left)  |RHS to 1 less than previous value    | Old value      |`var a = 3` <br> `--a;//Returns 2 and a = 2`
 
 # Assignment #
 Operator    | Phrase Assigns                                   | Example
