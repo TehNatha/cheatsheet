@@ -116,6 +116,7 @@ Border | Literal | Example
 
 # Logic #
  - while()
+ - do ... while()
  - for(;;)
  - if()
  - else
