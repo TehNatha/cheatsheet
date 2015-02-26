@@ -43,6 +43,8 @@
    * Methods are functions that belong to objects for the purpose of manipulating or reading them.
  - Property
    * A properties are the subvalues of objects.
+ - First Member Functions
+   * First member function are a feature of javascript such that functions are treated like an value and can be assigned to and passed among variables and used as message arguments.
  - Type Coercion
    * Type coercion is the feature of Javascript that allows values of different types to be evaluated against each other. Common side effects and features of type coercion include:
      + Primitives can have methods and properties by being coerced into object versions of their types.
@@ -59,18 +61,19 @@
    * https://www.google.com/?gws_rd=ssl#q=Principle+of+least+astonishment
 
 # Operators #
- Operator    | Left Hand Side(LHS) | Right Hand Side(RHS)         | Expression Returns                   | Example
--------------|---------------------|------------------------------|--------------------------------------|--------
- +           |number               |primitive                     |Sum of LHS and RHS                    |`12+6; //Expression returns 18` <br> `12+"6"; //Expression returns 18`
- +           |string               |primitive                     |Concatentation of LHS and RHS         |`"12"+"6"; //Expression returns 126` <br> `"12"+6; //Expression returns 126` <br> `"The cow is " + "blurple?!"; //Expression returns "The cow is blurple?!"`
- -           |Primitive            |primitive                     |Difference of LHS and RHS             |`12-6; //Expression returns 6`
- -           |n/a                  |primitive                     |Negative value of RHS                 | `- 12; //Expression returns -12` <br> `- "12";//Expression returns -12`
- *           |primitive            |primitive                     |Product of LHS and RHS                |`12*6; //Expression returns 72`
- /           |primitive            |primitive                     |Quotient of LHS and RHS               |`12/6; //Expression returns 2`
- %           |primitive            |primitive                     |Remainder of LHS and RHS              |`12%6; //Expression returns 0` `13%6; //Expression returns 1`
- !           |n/a                  |primitive                     |The opposite of RHS's truthiness      |`!2;//Expression returns false` <br> `!0;//Expression returns true` <br> `!true;//Expression returns false` <br> `!"Door Knob";//Expression returns false` <br> `!null;//Expression returns true` <br> `!undefined;//Expression returns true` <br>
- instanceof  |function/object      |function/object               |Tests whether LHS inherits from RHS   |`function a() {};` <br> `function b() {};` <br> `var c = new a();` `a instanceof b;//Expression returns false` <br> `c instance of a;//Expression returns true;`
- typeof      |n/a                  |object/function/primitive     |String representation of value's type |`typeof "this";//Expression returns "string"` <br> `typeof 5;//Expression returns "number"` <br> `typeof true;//Expression returns "boolean"` <br> `typeof [];//Expression returns "object"`
+ Operator    | Left Hand Side(LHS) | Right Hand Side(RHS)         | Expression Returns                     | Example
+-------------|---------------------|------------------------------|----------------------------------------|--------
+ +           |number               |primitive                     |Sum of LHS and RHS                      |`12+6; //Expression returns 18` <br> `12+"6"; //Expression returns 18`
+ +           |string               |primitive                     |Concatentation of LHS and RHS           |`"12"+"6"; //Expression returns 126` <br> `"12"+6; //Expression returns 126` <br> `"The cow is " + "blurple?!"; //Expression returns "The cow is blurple?!"`
+ -           |Primitive            |primitive                     |Difference of LHS and RHS               |`12-6; //Expression returns 6`
+ -           |n/a                  |primitive                     |Negative value of RHS                   | `- 12; //Expression returns -12` <br> `- "12";//Expression returns -12`
+ *           |primitive            |primitive                     |Product of LHS and RHS                  |`12*6; //Expression returns 72`
+ /           |primitive            |primitive                     |Quotient of LHS and RHS                 |`12/6; //Expression returns 2`
+ %           |primitive            |primitive                     |Remainder of LHS and RHS                |`12%6; //Expression returns 0` `13%6; //Expression returns 1`
+ !           |n/a                  |primitive                     |The opposite of RHS's truthiness        |`!2;//Expression returns false` <br> `!0;//Expression returns true` <br> `!true;//Expression returns false` <br> `!"Door Knob";//Expression returns false` <br> `!null;//Expression returns true` <br> `!undefined;//Expression returns true` <br>
+ var         |n/a                  |variable                      |Creates a variable in the current scope |`var foo`
+ instanceof  |function/object      |function/object               |Tests whether LHS inherits from RHS     |`function a() {};` <br> `function b() {};` <br> `var c = new a();` `a instanceof b;//Expression returns false` <br> `c instance of a;//Expression returns true;`
+ typeof      |n/a                  |object/function/primitive     |String representation of value's type   |`typeof "this";//Expression returns "string"` <br> `typeof 5;//Expression returns "number"` <br> `typeof true;//Expression returns "boolean"` <br> `typeof [];//Expression returns "object"`
 
 # Comparators #
 Operator     | Expression Returns                                | Example
@@ -88,10 +91,10 @@ Operator     | Expression Returns                                | Example
 # Incrementors #
 Operator       | Expression Assigns                  | Expression Returns | Example
 ---------------|-------------------------------------|--------------------|--------
- (on right) ++ |LHS to 1 greater than previous value | New value          |`var a = 3` <br> `a++;//Returns 3 and a = 4`
- (on right) -- |LHS to 1 less than previous value    | New value          |`var a = 3` <br> `a--;//Returns 3 and a = 2`
- ++ (on left)  |RHS to 1 greater than previous value | Old value          |`var a = 3` <br> `++a;//Returns 4 and a = 4`
- -- (on left)  |RHS to 1 less than previous value    | Old value          |`var a = 3` <br> `--a;//Returns 2 and a = 2`
+ (postfix) ++  |LHS to 1 greater than previous value | New value          |`var a = 3` <br> `a++;//Returns 3 and a = 4`
+ (postfix) --  |LHS to 1 less than previous value    | New value          |`var a = 3` <br> `a--;//Returns 3 and a = 2`
+ ++ (prefix)   |RHS to 1 greater than previous value | Old value          |`var a = 3` <br> `++a;//Returns 4 and a = 4`
+ -- (prefix)   |RHS to 1 less than previous value    | Old value          |`var a = 3` <br> `--a;//Returns 2 and a = 2`
 
 # Assignment #
 Operator    | Expression Assigns                                | Example
@@ -113,8 +116,8 @@ Border | Literal | Example
 # Chunking #
 Border | Encloses                                           | Example
 -------|----------------------------------------------------|--------
- ()    | Expressions to be evaluated first                  |
- {}    | Blocks of code for control structures or functions |
+ ()    | Expressions to be evaluated first                  |`(stat1 + stat2 + stat3)/3`
+ {}    | Blocks of code for control structures or functions |`if(truthiness = true) {console.log("Rings true!");}`
 
 # Logic #
  - while()
@@ -224,9 +227,12 @@ Border | Encloses                                           | Example
 # Logic Escapes #
 Keyword | Does                                                   | Example
 --------|--------------------------------------------------------|--------
- break  |Exits a block of logic terminating any loop or function |
- return |Exits a block in a function providing a return value    |
+ break  |Exits a block of logic terminating any loop or function |`while(true) {if (myObject.isDone()) break;}`
+ return |Exits a block in a function providing a return value    |`function() {return "Why is Captain Kirk an Ocelot?";}`
 
 # Object Accessors #
- - .
- - []
+Notation | Note                                                                                         | Example
+---------|----------------------------------------------------------------------------------------------|--------
+ .       |Accesses the property or method of an object                                                  |`console.log("Everything is Awesome!");` <br> `doge.bark()` <br> `doge.muchProperty`
+ - []    |Accesses the property or method of an object via a string representation of its variable name |`console["log"]("Everything is Awesome!");` <br> `doge["bark"]()` <br> `doge["muchProperty"]`
+ - []    |Accesses a value in an array at a given numeric index                                         |`bookCollection[1]`
