@@ -232,7 +232,7 @@ Keyword | Does                                                   | Example
 
 # Object Accessors #
 Notation | Note                                                                                         | Example
----------|----------------------------------------------------------------------------------------------|--------
- .       |Accesses the property or method of an object                                                  |`console.log("Everything is Awesome!");` <br> `doge.bark()` <br> `doge.muchProperty`
- - []    |Accesses the property or method of an object via a string representation of its variable name |`console["log"]("Everything is Awesome!");` <br> `doge["bark"]()` <br> `doge["muchProperty"]`
- - []    |Accesses a value in an array at a given numeric index                                         |`bookCollection[1]`
+-------|----------------------------------------------------------------------------------------------|--------
+ .     |Accesses the property or method of an object                                                  |`console.log("Everything is Awesome!");` <br> `doge.bark()` <br> `doge.muchProperty`
+ []    |Accesses the property or method of an object via a string representation of its variable name |`console["log"]("Everything is Awesome!");` <br> `doge["bark"]()` <br> `doge["muchProperty"]`
+ []    |Accesses a value in an array at a given numeric index                                         |`bookCollection[1]`
