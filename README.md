@@ -49,6 +49,14 @@
      + null, undefined, 0 , and  "" all evaluate to false
      + String values that are numbers can be compared to number values
      + Non-string values can be concatenated to strings easily.
+ - The Law of Demeter
+   * Objects should be loosely coupled and agnostic about each other.
+   * Don't trust strangers.
+   * https://www.google.com/webhp?hl=en#hl=en&q=law+of+demeter
+ - The Principle of Least Astonishment
+   * People are part of the system. The design should match the user's experience, expectations, and mental models.
+   * Explote and attend to the knowledge base of your users (fellow programmers).
+   * https://www.google.com/?gws_rd=ssl#q=Principle+of+least+astonishment
 
 # Operators #
  Operator    | Left Hand Side(LHS) | Right Hand Side(RHS)         | Expression Returns                   | Example
