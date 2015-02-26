@@ -45,6 +45,8 @@
    * A properties are the subvalues of objects.
  - First Class Functions
    * First class functions are a feature of javascript such that functions are treated like an value and can be assigned to and passed among variables and used as message arguments.
+ - Prototypical inheritance
+   * Prototypical inheritance is how Javascript manages inheritance. Objects and functions search a table for the nearest inherited method or property when such is called.
  - Type Coercion
    * Type coercion is the feature of Javascript that allows values of different types to be evaluated against each other. Common side effects and features of type coercion include:
      + Primitives can have methods and properties by being coerced into object versions of their types.
@@ -61,19 +63,20 @@
    * https://www.google.com/?gws_rd=ssl#q=Principle+of+least+astonishment
 
 # Operators #
- Operator    | Left Hand Side(LHS) | Right Hand Side(RHS)         | Expression Returns                     | Example
--------------|---------------------|------------------------------|----------------------------------------|--------
- +           |number               |primitive                     |Sum of LHS and RHS                      |`12+6; //Expression returns 18` <br> `12+"6"; //Expression returns 18`
- +           |string               |primitive                     |Concatentation of LHS and RHS           |`"12"+"6"; //Expression returns 126` <br> `"12"+6; //Expression returns 126` <br> `"The cow is " + "blurple?!"; //Expression returns "The cow is blurple?!"`
- -           |Primitive            |primitive                     |Difference of LHS and RHS               |`12-6; //Expression returns 6`
- -           |n/a                  |primitive                     |Negative value of RHS                   | `- 12; //Expression returns -12` <br> `- "12";//Expression returns -12`
- *           |primitive            |primitive                     |Product of LHS and RHS                  |`12*6; //Expression returns 72`
- /           |primitive            |primitive                     |Quotient of LHS and RHS                 |`12/6; //Expression returns 2`
- %           |primitive            |primitive                     |Remainder of LHS and RHS                |`12%6; //Expression returns 0` `13%6; //Expression returns 1`
- !           |n/a                  |primitive                     |The opposite of RHS's truthiness        |`!2;//Expression returns false` <br> `!0;//Expression returns true` <br> `!true;//Expression returns false` <br> `!"Door Knob";//Expression returns false` <br> `!null;//Expression returns true` <br> `!undefined;//Expression returns true` <br>
- var         |n/a                  |variable                      |Creates a variable in the current scope |`var foo`
- instanceof  |function/object      |function/object               |Tests whether LHS inherits from RHS     |`function a() {};` <br> `function b() {};` <br> `var c = new a();` `a instanceof b;//Expression returns false` <br> `c instance of a;//Expression returns true;`
- typeof      |n/a                  |object/function/primitive     |String representation of value's type   |`typeof "this";//Expression returns "string"` <br> `typeof 5;//Expression returns "number"` <br> `typeof true;//Expression returns "boolean"` <br> `typeof [];//Expression returns "object"`
+ Operator    | Left Hand Side(LHS) | Right Hand Side(RHS)         | Expression Returns                                                              | Example
+-------------|---------------------|------------------------------|---------------------------------------------------------------------------------|--------
+ +           |number               |primitive                     |Sum of LHS and RHS                                                               |`12+6; //Expression returns 18` <br> `12+"6"; //Expression returns 18`
+ +           |string               |primitive                     |Concatentation of LHS and RHS                                                    |`"12"+"6"; //Expression returns 126` <br> `"12"+6; //Expression returns 126` <br> `"The cow is " + "blurple?!"; //Expression returns "The cow is blurple?!"`
+ -           |Primitive            |primitive                     |Difference of LHS and RHS                                                        |`12-6; //Expression returns 6`
+ -           |n/a                  |primitive                     |Negative value of RHS                                                            | `- 12; //Expression returns -12` <br> `- "12";//Expression returns -12`
+ *           |primitive            |primitive                     |Product of LHS and RHS                                                           |`12*6; //Expression returns 72`
+ /           |primitive            |primitive                     |Quotient of LHS and RHS                                                          |`12/6; //Expression returns 2`
+ %           |primitive            |primitive                     |Remainder of LHS and RHS                                                         |`12%6; //Expression returns 0` `13%6; //Expression returns 1`
+ !           |n/a                  |primitive                     |The opposite of RHS's truthiness                                                 |`!2;//Expression returns false` <br> `!0;//Expression returns true` <br> `!true;//Expression returns false` <br> `!"Door Knob";//Expression returns false` <br> `!null;//Expression returns true` <br> `!undefined;//Expression returns true` <br>
+ var         |n/a                  |variable                      |Creates a variable in the current scope                                          |`var foo;`
+ new         |n/a                  |object/function               |Creats a new object that inherits from RHS and initializes from RHS's contructor |`new String("Blargh!");`
+ instanceof  |function/object      |function/object               |Tests whether LHS inherits from RHS                                              |`function a() {};` <br> `function b() {};` <br> `var c = new a();` <br> `a instanceof b;//Expression returns false` <br> `c instance of a;//Expression returns true;`
+ typeof      |n/a                  |object/function/primitive     |String representation of value's type                                            |`typeof "this";//Expression returns "string"` <br> `typeof 5;//Expression returns "number"` <br> `typeof true;//Expression returns "boolean"` <br> `typeof [];//Expression returns "object"`
 
 # Comparators #
 Operator     | Expression Returns                                | Example
@@ -99,12 +102,12 @@ Operator       | Expression Assigns                  | Expression Returns | Exam
 # Assignment #
 Operator    | Expression Assigns                                | Example
 ------------|---------------------------------------------------|--------
- =          |Assigns LHS variable to RHS value                  |
- +=         |Assigns LHS variable to Sum of LHS and RHS         |
- -=         |Assigns LHS variable to Difference of LHS less RHS |
- *=         |Assigns LHS variable to product LHS and RHS        |
- /=         |Assigns LHS variable to quotient of LHS over RHS   |
- %=         |Assigns LHS variable to remainder of LHS over RHS  |
+ =          |Assigns LHS variable to RHS value                  |`a = 3`
+ +=         |Assigns LHS variable to Sum of LHS and RHS         |`a += 9 // a is now 12`
+ -=         |Assigns LHS variable to Difference of LHS less RHS |`a -= 2 // a is now 10`
+ *=         |Assigns LHS variable to product LHS and RHS        |`a *= 6 // a is now 60`
+ /=         |Assigns LHS variable to quotient of LHS over RHS   |`a /= 3 // a is now 20`
+ %=         |Assigns LHS variable to remainder of LHS over RHS  |`a %= 7 // a is now 6`
 
 # Literals #
 Border | Literal | Example
