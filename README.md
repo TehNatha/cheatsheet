@@ -43,8 +43,8 @@
    * Methods are functions that belong to objects for the purpose of manipulating or reading them.
  - Property
    * A properties are the subvalues of objects.
- - First Member Functions
-   * First member function are a feature of javascript such that functions are treated like an value and can be assigned to and passed among variables and used as message arguments.
+ - First Class Functions
+   * First class functions are a feature of javascript such that functions are treated like an value and can be assigned to and passed among variables and used as message arguments.
  - Type Coercion
    * Type coercion is the feature of Javascript that allows values of different types to be evaluated against each other. Common side effects and features of type coercion include:
      + Primitives can have methods and properties by being coerced into object versions of their types.
