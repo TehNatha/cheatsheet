@@ -111,20 +111,121 @@ Border | Literal | Example
  []    | Array   | `[1,2,3,"four"];`
 
 # Chunking #
-- ()
-- {}
+Border | Encloses                                           | Example
+-------|----------------------------------------------------|--------
+ ()    | Expressions to be evaluated first                  |
+ {}    | Blocks of code for control structures or functions |
 
 # Logic #
  - while()
+   * Repeats a block as long as the expression in parentheses has a return value of true. Checks before execution of the block.
+   * Example:
+```javascript
+  var count = 0
+  var max = 14
+  while(count < max) {
+    console.log(++i);
+  } // prints 1 through 14
+```
+
+
  - do ... while()
+   * Repeats a block as long as the expression in parentheses has a return value of true. Checks after execution of the block.
+   * Example:
+```javascript
+  var count = 0
+  var max = 0
+  while {
+    console.log(++i);
+  } do(count < max); // prints 1
+```
+
+
  - for(;;)
+   * Initializes a variable with a value, then loops as long as an expression resolves to true, while iterating the value of the variable.
+   * Example:
+```javascript
+  var max = 14;
+  for(var count = 0;count < max; count++){
+    console.log(count);
+  } // Prints 0 through 13
+```
+
+
  - if()
+   * Executes a line or block of code if an expression resolves to true.
+   * Example:
+```javascript
+  var bigDog = 13;
+  var smallDog = 2;
+  if (bigDog > smallDog) {
+    console.log("Big dog is big.");
+  }
+```
+
+
  - else
+   * Executes a line or block of code when an expression does not resolve to true.
+   * Example:
+```javascript
+  var bigDog = 13;
+  var smallDog = 2;
+  if (bigDog < smallDog) {
+    console.log("Small dog is big.");
+  } else {
+    console.log("Small dog is small");
+  }
+```
+
+
  - else if()
+   * Executes a line or block of code when an expression does not resolve to true, but its expression resolves to true.
+   * Example:
+```javascript
+  var bigDog = 13;
+  var smallDog = 2;
+  if (bigDog < smallDog) {
+    console.log("Small dog is big.");
+  } else if (smallDog < bigDog) {
+    console.log("Small dog is small");
+  } else {
+    console.log("Didn't expect the Doge!")
+  }
+```
+
+
  - switch() ... case :
+   * Don't bother, seriously.
+
+
  - function()
- - break
- - return
+   * Holds a block of code for later execution.
+   * Example:
+```javascript
+  function bigDog(bark) {
+    console.log(bark);
+  }
+  bigDog("Quack!"); // Prints Quack!
+```
+   * Example:
+```javascript
+  var bigDog = function(Bark) {
+    console.log(bark);
+  }
+  bigDog("Quack!"); // Prints Quack!
+```
+   * Example:
+```javascript
+  (function (bark) {
+    console.log(bark);
+  })("Quack!");
+```
+
+# Logic Escapes #
+Keyword | Does                                                   | Example
+--------|--------------------------------------------------------|--------
+ break  |Exits a block of logic terminating any loop or function |
+ return |Exits a block in a function providing a return value    |
 
 # Object Accessors #
  - .
